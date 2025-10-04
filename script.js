@@ -9,13 +9,13 @@ async function loadProducts() {
     const jsonData = JSON.parse(text.substring(47).slice(0, -2));
     const rows = jsonData.table.rows;
 
-    products = rows.map(r => ({
-      name: r.c[0]?.v || "",
-      category: r.c[1]?.v || "",
-      price: r.c[2]?.v || "",
-      desc: r.c[3]?.v || "",
-      image: r.c[4]?.v || ""
-    }));
+products = rows.slice(1).map(r => ({
+  name: r.c[0]?.v || "",
+  category: r.c[1]?.v || "",
+  price: r.c[2]?.v || "",
+  desc: r.c[3]?.v || "",
+  image: r.c[4]?.v || ""
+}));
 
     populateCategoryFilter();
     displayProducts(products);
@@ -78,3 +78,4 @@ document.getElementById("close").addEventListener("click", ()=>{
 
 // Init
 loadProducts();
+
