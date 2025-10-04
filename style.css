@@ -19,23 +19,27 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Logo container - stacked vertically */
 .logo-container {
   display: flex;
+  flex-direction: column; /* stack logo above name */
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  gap: 15px; /* space between logo and name */
 }
 
+/* Logo image - bigger */
 .logo-container .logo {
-  width: 50px;   /* adjust logo size */
-  height: 50px;  /* adjust logo size */
+  width: 150px;   /* bigger logo */
+  height: 150px;  /* adjust as needed */
   object-fit: contain;
 }
 
 header h1 {
-  font-size: 2em;
+  font-size: 2.5em; /* bigger site name */
   color: #c76b8c;
+  margin: 0;
 }
 
 /* Search and filter */
@@ -165,5 +169,14 @@ header input:focus, header select:focus {
 
   .product img {
     max-height: 200px;
+  }
+
+  .logo-container .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  header h1 {
+    font-size: 2em;
   }
 }
