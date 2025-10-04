@@ -19,12 +19,26 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.logo-container .logo {
+  width: 50px;   /* adjust logo size */
+  height: 50px;  /* adjust logo size */
+  object-fit: contain;
+}
+
 header h1 {
   font-size: 2em;
-  margin-bottom: 15px;
   color: #c76b8c;
 }
 
+/* Search and filter */
 header input, header select {
   padding: 8px 12px;
   margin: 5px;
@@ -61,16 +75,15 @@ header input:focus, header select:focus {
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* Updated image styling to prevent cropping */
 .product img {
   width: 100%;
   border-radius: 15px;
   cursor: pointer;
   margin-bottom: 15px;
-  height: auto;          /* height adapts to image */
-  max-height: 250px;     /* optional max height for uniformity */
-  object-fit: contain;    /* show full image without cropping */
-  background: #f8f8f8;   /* placeholder background for smaller images */
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  background: #f8f8f8;
 }
 
 .product h3 {
