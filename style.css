@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #fff8f5;
+  color: #333;
+}
+
+/* Header */
+header {
+  padding: 30px 20px;
+  text-align: center;
+  background: #f9e6e3;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #c76b8c;
+}
+
+header input, header select {
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid #e6c9d4;
+  outline: none;
+  transition: 0.2s;
+}
+
+header input:focus, header select:focus {
+  border-color: #c76b8c;
+}
+
+/* Product Grid */
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+.product {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.product h3 {
+  color: #c76b8c;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.product p {
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.product strong {
+  font-size: 1.1em;
+  color: #c76b8c;
+}
+
+/* Contact Section */
+#contact {
+  background: #fce8eb;
+  padding: 40px 20px;
+  text-align: center;
+  color: #333;
+}
+
+#contact h2 {
+  color: #c76b8c;
+  margin-bottom: 15px;
+}
+
+#contact a {
+  color: #c76b8c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+#lightbox.hidden {
+  display: none;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header input, header select {
+    width: 80%;
+  }
+}

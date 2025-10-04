@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Our Products</h1>
+    <input type="text" id="search" placeholder="Search products...">
+    <select id="category-filter">
+      <option value="">All Categories</option>
+    </select>
+  </header>
+
+  <main>
+    <div id="product-list"></div>
+  </main>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:tesecumj@gmail.com">tesecumj@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/15016029197" target="_blank">+501 602-9197</a></p>
+  </section>
+
+  <!-- Lightbox for images -->
+  <div id="lightbox" class="hidden">
+    <span id="close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
