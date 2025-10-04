@@ -1,18 +1,14 @@
 const sheetURL = "https://docs.google.com/spreadsheets/d/1zb4mXIzirnNe_VnNC6MgSKASeAlIEF9-q01R9Ns72gM/gviz/tq?tqx=out:json";
-
 let products = [];
 
-// Fetch products from Google Sheet JSON
+// Load products
 async function loadProducts() {
   try {
     const res = await fetch(sheetURL);
     const text = await res.text();
-
-    // Remove Google Sheets JSON wrapper
     const jsonData = JSON.parse(text.substring(47).slice(0, -2));
     const rows = jsonData.table.rows;
 
-    // Map rows to product objects
     products = rows.map(r => ({
       name: r.c[0]?.v || "",
       category: r.c[1]?.v || "",
@@ -23,32 +19,30 @@ async function loadProducts() {
 
     populateCategoryFilter();
     displayProducts(products);
-
-  } catch(err) {
+  } catch(err){
     console.error("Error loading products:", err);
     document.getElementById("product-list").innerHTML = "<p>Failed to load products.</p>";
   }
 }
 
-// Display products in grid
-function displayProducts(list) {
+// Display products
+function displayProducts(list){
   const container = document.getElementById("product-list");
- container.innerHTML = list.map(p => `
-  <div class="product" data-category="${p.category}">
-    <img src="${p.image}" alt="${p.name}">
-    <h3>${p.name}</h3>
-    <p class="desc">${p.desc}</p>
-    ${p.price ? `<p class="price">${p.price}</p>` : ""}
-  </div>
-`).join("");
+  container.innerHTML = list.map(p => `
+    <div class="product" data-category="${p.category}">
+      <img src="${p.image}" alt="${p.name}">
+      <h3>${p.name}</h3>
+      <p class="desc">${p.desc}</p>
+      ${p.price ? `<p class="price">${p.price}</p>` : ""}
+    </div>
+  `).join("");
 
-  // Add click for lightbox
   document.querySelectorAll(".product img").forEach(img => {
     img.addEventListener("click", () => openLightbox(img.src));
   });
 }
 
-// Search and filter
+// Search & filter
 document.getElementById("search").addEventListener("input", e => {
   const term = e.target.value.toLowerCase();
   const filtered = products.filter(p => p.name.toLowerCase().includes(term));
@@ -61,29 +55,26 @@ document.getElementById("category-filter").addEventListener("change", e => {
   displayProducts(filtered);
 });
 
-// Populate category filter dropdown
-function populateCategoryFilter() {
+// Category dropdown
+function populateCategoryFilter(){
   const categories = [...new Set(products.map(p => p.category).filter(c => c))];
   const select = document.getElementById("category-filter");
   categories.forEach(c => {
     const opt = document.createElement("option");
-    opt.value = c;
-    opt.textContent = c;
+    opt.value = c; opt.textContent = c;
     select.appendChild(opt);
   });
 }
 
-// Lightbox functions
-function openLightbox(src) {
+// Lightbox
+function openLightbox(src){
   const lb = document.getElementById("lightbox");
   lb.classList.remove("hidden");
   document.getElementById("lightbox-img").src = src;
 }
-
-document.getElementById("close").addEventListener("click", () => {
+document.getElementById("close").addEventListener("click", ()=>{
   document.getElementById("lightbox").classList.add("hidden");
 });
 
-// Load products on page load
+// Init
 loadProducts();
-
