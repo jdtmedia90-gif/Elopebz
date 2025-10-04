@@ -33,14 +33,14 @@ async function loadProducts() {
 // Display products in grid
 function displayProducts(list) {
   const container = document.getElementById("product-list");
-  container.innerHTML = list.map(p => `
-    <div class="product" data-category="${p.category}">
-      <img src="${p.image}" alt="${p.name}">
-      <h3>${p.name}</h3>
-      <p>${p.desc}</p>
-      ${p.price ? `<strong>${p.price}</strong>` : ""}
-    </div>
-  `).join("");
+ container.innerHTML = list.map(p => `
+  <div class="product" data-category="${p.category}">
+    <img src="${p.image}" alt="${p.name}">
+    <h3>${p.name}</h3>
+    <p class="desc">${p.desc}</p>
+    ${p.price ? `<p class="price">${p.price}</p>` : ""}
+  </div>
+`).join("");
 
   // Add click for lightbox
   document.querySelectorAll(".product img").forEach(img => {
@@ -86,3 +86,4 @@ document.getElementById("close").addEventListener("click", () => {
 
 // Load products on page load
 loadProducts();
+
