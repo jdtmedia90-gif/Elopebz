@@ -42,7 +42,20 @@
     }
 
     ul {
-      padding-left: 25px;
+      padding-left: 0;
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    ul li {
+      margin-bottom: 18px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #FFF9F5;
+    }
+
+    ol {
+      margin-left: 20px;
     }
 
     .back-button {
@@ -61,6 +74,13 @@
     .back-button:hover {
       background-color: #B89A52;
     }
+
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
   </style>
 </head>
 <body>
@@ -71,12 +91,24 @@
 
   <main>
     <h2>Payment Options</h2>
-    <p>We offer several easy and secure payment methods:</p>
+    <p>We accept bank transfers to the following accounts (placeholders):</p>
+
     <ul>
-      <li><strong>Credit/Debit Card:</strong> Visa, MasterCard, and American Express.</li>
-      <li><strong>Online Transfer:</strong> Direct bank payments available upon request.</li>
-      <li><strong>PayPal:</strong> Fast and secure payments worldwide.</li>
-      <li><strong>Cash on Delivery:</strong> Available in select locations.</li>
+      <li>
+        <strong>Belize Bank</strong><br>
+        Account Name: <em>ELOPEBZ</em><br>
+        Account Number: <code>012-345678-90</code>
+      </li>
+      <li>
+        <strong>Atlantic Bank</strong><br>
+        Account Name: <em>ELOPEBZ</em><br>
+        Account Number: <code>987-654321-01</code>
+      </li>
+      <li>
+        <strong>Heritage Bank</strong><br>
+        Account Name: <em>ELOPEBZ</em><br>
+        Account Number: <code>123-456789-02</code>
+      </li>
     </ul>
 
     <h2>How to Book</h2>
