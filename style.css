@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #fff8f5;
+  background: #FFF9F2; /* soft off-white for contrast */
   color: #333;
 }
 
@@ -15,31 +15,55 @@ body {
 header {
   padding: 30px 20px;
   text-align: center;
-  background: #f9e6e3;
+  background: #B89A52; /* Mustard Gold */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: white;
 }
 
 /* Logo container - stacked vertically */
 .logo-container {
   display: flex;
-  flex-direction: column; /* stack logo above name */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  gap: 15px; /* space between logo and name */
+  margin-bottom: 15px;
+  gap: 12px;
 }
 
-/* Logo image - bigger */
 .logo-container .logo {
-  width: 150px;   /* bigger logo */
-  height: 150px;  /* adjust as needed */
+  width: 150px;
+  height: 150px;
   object-fit: contain;
 }
 
 header h1 {
-  font-size: 2.5em; /* bigger site name */
-  color: #c76b8c;
+  font-size: 2.5em;
+  color: white;
   margin: 0;
+}
+
+/* Toolbar */
+.toolbar {
+  background: linear-gradient(90deg, #B89A52, #C3440D, #C599CC);
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 12px 0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.toolbar a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: 0.3s;
+}
+
+.toolbar a:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
 }
 
 /* Search and filter */
@@ -47,14 +71,14 @@ header input, header select {
   padding: 8px 12px;
   margin: 5px;
   border-radius: 20px;
-  border: 1px solid #e6c9d4;
+  border: 1px solid #C599CC;
   outline: none;
   transition: 0.2s;
   width: 200px;
 }
 
 header input:focus, header select:focus {
-  border-color: #c76b8c;
+  border-color: #C3440D;
 }
 
 /* Product Grid */
@@ -66,12 +90,13 @@ header input:focus, header select:focus {
 }
 
 .product {
-  background: #fff;
+  background: #FFF;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   transition: transform 0.3s, box-shadow 0.3s;
+  border-top: 5px solid #C3440D;
 }
 
 .product:hover {
@@ -87,41 +112,42 @@ header input:focus, header select:focus {
   height: auto;
   max-height: 250px;
   object-fit: contain;
-  background: #f8f8f8;
+  background: #FFF5E4;
 }
 
 .product h3 {
-  color: #c76b8c;
+  color: #C3440D;
   font-size: 1.2em;
   margin-bottom: 10px;
 }
 
 .product .desc {
   font-size: 0.95em;
-  color: #666;
+  color: #555;
   margin-bottom: 10px;
 }
 
 .product .price {
   font-weight: bold;
-  color: #c76b8c;
+  color: #B89A52;
   font-size: 1.1em;
 }
 
 /* Contact Section */
 #contact {
-  background: #fce8eb;
+  background: #C599CC;
   padding: 40px 20px;
   text-align: center;
+  color: white;
 }
 
 #contact h2 {
-  color: #c76b8c;
+  color: white;
   margin-bottom: 15px;
 }
 
 #contact a {
-  color: #c76b8c;
+  color: #FFF;
   text-decoration: none;
   font-weight: bold;
 }
@@ -161,6 +187,45 @@ header input:focus, header select:focus {
   cursor: pointer;
 }
 
+/* About / Payment Pages */
+.page-content {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.page-content h1 {
+  color: #C3440D;
+  margin-bottom: 20px;
+}
+
+.page-content h2 {
+  color: #B89A52;
+  margin-top: 30px;
+}
+
+.page-content p, .page-content li {
+  color: #333;
+  margin: 10px auto;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.back-btn {
+  margin-top: 40px;
+  padding: 10px 20px;
+  background-color: #C599CC;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #B89A52;
+}
+
 /* Responsive tweaks */
 @media (max-width: 600px) {
   header input, header select {
@@ -178,5 +243,10 @@ header input:focus, header select:focus {
 
   header h1 {
     font-size: 2em;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    gap: 10px;
   }
 }
